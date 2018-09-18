@@ -1,5 +1,7 @@
 <div class="basic-note">
     <h3>{{ note.content }}</h3>
+
+    <h2>Nombre Apellido {{note.content.nombre}}</h2>
     <span class="button is-small is-info" (click)='addHeartToNote(note.hearts)'>
     Heart <i class="fa fa-heart" style="margin-left: 5px;"></i>
   </span>

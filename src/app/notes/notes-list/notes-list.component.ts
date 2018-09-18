@@ -10,16 +10,24 @@ import { Observable } from 'rxjs';
 export class NotesListComponent implements OnInit {
 
   notes: Observable<any[]>;
+  locales: Observable<any[]>;
+  productos: Observable<any[]>;
   content: string;
+  user:any={}
 
   constructor(private notesService: NotesService) { }
 
   ngOnInit() {
     this.notes = this.notesService.getData();
+    this.locales = this.notesService.getLocales();
+    this.productos = this.notesService.getProductos();
+
+    console.log('locales',this.locales)
+    console.log('prodcutos',this.productos)
   }
 
-  clickHandler() {
-    this.notesService.createNote(this.content);
+  clickHandler(user) {
+    this.notesService.createNote(user);
     this.content = '';
   }
 

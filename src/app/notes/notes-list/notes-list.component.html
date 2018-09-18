@@ -5,13 +5,32 @@
 </p>
 <hr>
 
-<input [(ngModel)]="content" placeholder="Add your own note" class="input" name="note">
+<input [(ngModel)]="user.nombre" placeholder="Add your own note" class="input" name="note">
+<input [(ngModel)]="user.apellido" placeholder="Add your own dato" class="input" name="dato">
 
 
-<button class="button is-success" (click)="clickHandler()" [disabled]="content?.length < 2 || content?.length > 200">
+<button class="button is-success" (click)="clickHandler(user)" [disabled]="user.nombre?.length < 2 || user.apellido?.length > 200">
   Add Note
 </button>
 <hr>
+Locales
+<div *ngFor="let local of locales | async">
+    {{local.nombre}}
+
+ 
+</div>
+Productos
+<div *ngFor="let p of productos | async">
+    {{p.modelo}}
+
+ 
+</div>
+
+
+
+Notas
 <div *ngFor="let note of notes | async">
     <note-detail [note]="note"></note-detail>
 </div>
+
+
