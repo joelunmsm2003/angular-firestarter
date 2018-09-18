@@ -1,11 +1,11 @@
 export const environment = {
   production: true,
   firebase: {
-    apiKey: 'AIzaSyAc9Tt8pQQF3ntu2Tz66iUKl_fXHtdhIyc',
-    authDomain: 'firestarter-96e46.firebaseapp.com',
-    databaseURL: 'https://firestarter-96e46.firebaseio.com',
-    projectId: 'firestarter-96e46',
-    storageBucket: 'firestarter-96e46.appspot.com',
-    messagingSenderId: '581326886241'
+  	apiKey: "AIzaSyCG-ouTCkDZxR8NWvE5dvQ20dUJl1ieLBQ",
+    authDomain: "gamarra-e89b4.firebaseapp.com",
+    databaseURL: "https://gamarra-e89b4.firebaseio.com",
+    projectId: "gamarra-e89b4",
+    storageBucket: "gamarra-e89b4.appspot.com",
+    messagingSenderId: "218928794127"
   }
 };

@@ -21,12 +21,14 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireFunctionsModule } from 'angularfire2/functions';
+import { FormularioComponent } from './formulario/formulario.component';
+import { AlmacenComponent } from './almacen/almacen.component';
 
 // IMPORTANT
 // Add your own project credentials to environments/*.ts
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, FormularioComponent, AlmacenComponent],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserTransferStateModule,
