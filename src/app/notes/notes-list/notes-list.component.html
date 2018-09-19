@@ -1,9 +1,16 @@
-<h1>Firestore Notes</h1>
-<p>
-    Learn how to build
-    <a href="https://angularfirebase.com/tag/firestore">cool stuff with Firestore</a>
-</p>
+<h1>Modelos</h1>
+
+
+<div *ngFor="let m of modelos | async">
+    {{m.nombre}}
+
+ 
+</div>
+
 <hr>
+
+
+
 
 <input [(ngModel)]="user.nombre" placeholder="Add your own note" class="input" name="note">
 <input [(ngModel)]="user.apellido" placeholder="Add your own dato" class="input" name="dato">
