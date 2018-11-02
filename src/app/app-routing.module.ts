@@ -13,7 +13,7 @@ import { SsrPageComponent } from './ui/ssr-page/ssr-page.component';
 const routes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'login', component: UserLoginComponent },
-  { path: 'notes', component: NotesListComponent,  canActivate: [AuthGuard] },
+  { path: 'notes', component: NotesListComponent },
   { path: 'uploads',  component: UploadPageComponent,  canActivate: [AuthGuard] },
 
   { path: 'ssr', component: SsrPageComponent }

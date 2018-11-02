@@ -11,12 +11,16 @@ export class NotesService {
   notesCollection: AngularFirestoreCollection<any>;
   localesCollection: AngularFirestoreCollection<any>;
   productosCollection: AngularFirestoreCollection<any>;
+  modelosCollection: AngularFirestoreCollection<any>;
   noteDocument:   AngularFirestoreDocument<any>;
 
   constructor(private afs: AngularFirestore) {
     this.notesCollection = this.afs.collection('notes', (ref) => ref.orderBy('time', 'desc').limit(5));
     this.localesCollection =this.afs.collection('locales', (ref) => ref.limit(5));
-    this.productosCollection =this.afs.collection('productos', (ref) => ref.limit(5));
+    this.productosCollection =this.afs.collection('locales/bWjZmXq7Js0enZukO36k/productos', (ref) => ref.limit(5));
+    this.modelosCollection =this.afs.collection('modelos', (ref) => ref.limit(5));
+
+
   }
 
   getData(): Observable<any[]> {
@@ -57,6 +61,19 @@ export class NotesService {
     );
   }
 
+     getModelos(): Observable<any[]> {
+    // ['added', 'modified', 'removed']
+    return this.modelosCollection.snapshotChanges().pipe(
+      map((actions) => {
+        return actions.map((a) => {
+          const data = a.payload.doc.data();
+          return { id: a.payload.doc.id, ...data };
+        });
+      })
+    );
+  }
+
+
 
 
   getNote(id: string) {
@@ -65,6 +82,8 @@ export class NotesService {
 
   getLima(id: string) {
     return this.afs.doc<any>(`notes/${id}`);
+
+
   }
 
   createNote(content: string) {
